@@ -1,0 +1,19 @@
+{
+    "version": 2,
+    "builds": [
+        {
+            "src": "api/*.js",
+            "use": "@vercel/node"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/api/addSchool",
+            "dest": "/api/addSchool.js"
+        },
+        {
+            "src": "/api/listSchools",
+            "dest": "/api/listSchools.js"
+        }
+    ]
+}
