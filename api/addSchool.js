@@ -13,7 +13,7 @@ module.exports = async (req, res) => {
 
     try {
         const query = 'INSERT INTO schools (name, address, latitude, longitude) VALUES (?, ?, ?, ?)';
-        await db.query(query, [name, address, parseFloat(latitude), parseFloat(longitude)]);
+        await db.execute(query, [name, address, parseFloat(latitude), parseFloat(longitude)]);
         res.status(201).json({ message: 'School added successfully' });
     } catch (err) {
         res.status(500).json({ message: err.message });
